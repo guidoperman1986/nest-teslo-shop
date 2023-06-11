@@ -1,12 +1,14 @@
+import { ProductImage } from './product-image.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   BeforeInsert,
   BeforeUpdate,
+  OneToMany,
 } from 'typeorm';
 
-@Entity()
+@Entity({ name: 'products' })
 export class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -52,6 +54,15 @@ export class Product {
     default: [],
   })
   tags: string[];
+
+  // eslint-disable-next-line prettier/prettier
+  @OneToMany(
+    () => ProductImage,
+    (productImage) => productImage.product,
+    // eslint-disable-next-line prettier/prettier
+    { cascade: true, eager: true },
+  )
+  images?: ProductImage[];
 
   @BeforeInsert()
   @BeforeUpdate()
