@@ -4,6 +4,8 @@
 
 postgres/
 .env
+/static
+/public
 
 # Logs
 logs
