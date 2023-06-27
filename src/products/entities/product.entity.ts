@@ -1,3 +1,4 @@
+import { User } from 'src/auth/entities/user.entity';
 import { ProductImage } from './product-image.entity';
 import {
   Entity,
@@ -6,6 +7,7 @@ import {
   BeforeInsert,
   BeforeUpdate,
   OneToMany,
+  ManyToOne,
 } from 'typeorm';
 
 @Entity({ name: 'products' })
@@ -63,6 +65,9 @@ export class Product {
     { cascade: true, eager: true },
   )
   images?: ProductImage[];
+
+  @ManyToOne(() => User, (user) => user.product, { eager: true }) //eager sirve para que cuando se consulten los productos cargue la relacion la tabla de users
+  user: User;
 
   @BeforeInsert()
   @BeforeUpdate()
