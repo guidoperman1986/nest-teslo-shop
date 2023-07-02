@@ -11,7 +11,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "build-prebuild": "npm run prebuild && npm run build",
+    "build-prebuild": "npm install && npm run prebuild && npm run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "node dist/main",
     "start:dev": "nest start --watch",
