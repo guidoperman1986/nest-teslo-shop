@@ -28,8 +28,10 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/passport": "^10.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/platform-socket.io": "^9.0.4",
     "@nestjs/serve-static": "^3.0.1",
     "@nestjs/typeorm": "^9.0.1",
+    "@nestjs/websockets": "^9.0.4",
     "@types/bcrypt": "^5.0.0",
     "@types/uuid": "^9.0.0",
     "bcrypt": "^5.1.0",
@@ -41,6 +43,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
+    "socket.io": "^4.7.1",
     "typeorm": "^0.3.11",
     "uuid": "^9.0.0"
   },
