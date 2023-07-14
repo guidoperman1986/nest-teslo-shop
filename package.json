@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "npm install && nest build",
+    "build": "nest build",
     "build-prebuild": "npm install && npm run prebuild && npm run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "node dist/main",
