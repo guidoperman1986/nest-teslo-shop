@@ -12,7 +12,9 @@ import { MessageWsModule } from './message-ws/message-ws.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       ssl: process.env.STAGE === 'prod',
       extra: {
@@ -20,11 +22,7 @@ import { MessageWsModule } from './message-ws/message-ws.module';
           process.env.STAGE === 'prod' ? { rejectUnauthorized: false } : null,
       },
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: +process.env.DB_PORT,
-      database: process.env.DB_NAME,
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
+      url: process.env.DATABASE_URL,
       autoLoadEntities: true,
       synchronize: true,
     }),

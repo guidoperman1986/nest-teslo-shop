@@ -4,18 +4,15 @@
 
 # Teslo API
 
-1. Clonar proyecto
-2. Ejecutar ```npm install```
-2. Clonar el archivo ```.env.template``` y renombrarlo a ```.env```
-4. Cambiar las variables de entorno.
-5. Levantar la base de datos
-```
-docker-compose up -d
-```
-
-6. Ejecutar Seed
+1. Clone proyect
+2. Run ```npm install```
+2. Clone file ```.env.template``` and rename it to ```.env```
+4. Fill environment variables.
+5. Fill database with data, Run Seed
 ```
 localhost:3000/api/seed
 ```
 
-7. Levantar la app en desarrollo con ```npm run start:dev```
+6. Run the app in development mode with ```npm run start:dev```
+
+7. You can create a database in neon.tech and then add string conection to environment variables.
