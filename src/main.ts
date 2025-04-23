@@ -14,6 +14,11 @@ async function bootstrap() {
     }),
   );
 
+  app.enableCors({
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
+
   await app.listen(process.env.PORT);
   logger.log(`App running on port ${process.env.PORT}`);
 }
