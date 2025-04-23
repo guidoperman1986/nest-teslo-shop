@@ -14,6 +14,6 @@ export class PaginationDto {
 
   @IsOptional()
   @IsString()
-  @IsIn(['man', 'women', 'kid'])
+  @IsIn(['men', 'women', 'kid', ''])
   gender?: string;
 }
