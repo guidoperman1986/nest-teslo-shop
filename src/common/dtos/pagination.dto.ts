@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Type } from 'class-transformer';
-import { IsOptional, IsPositive } from 'class-validator';
+import { IsIn, IsOptional, IsPositive, IsString } from 'class-validator';
 
 export class PaginationDto {
   @IsOptional()
@@ -11,4 +11,9 @@ export class PaginationDto {
   @IsOptional()
   @Type(()=> Number)
   offset?: number;
+
+  @IsOptional()
+  @IsString()
+  @IsIn(['male', 'female', 'unisex'])
+  gender?: string;
 }
